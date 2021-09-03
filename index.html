@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/c6f7f76e2e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-1">
+              <button id="currentLocation">📍</button>
+            </div>
+            <div class="col-2">
+              <button class="degree" id="celsius">°C</button><span> </span
+              ><button class="degree" id="fahrenheit">°F</button>
+            </div>
+            <div class="col-6 icon">
+              <img src="img/sun-cloud2.png" alt="logo" width="100" />
+            </div>
+            <div class="col-2">
+              <span id="time">Sunday 03:15</span>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-4"></div>
+            <div class="col-7">
+              <form id="searchForm">
+                <input
+                  id="cityInput"
+                  class="enterCity"
+                  type="text"
+                  placeholder="enter city"
+                  autofocus="on"
+                />
+                <input type="submit" value="🔍" />
+              </form>
+            </div>
+            <div class="col"></div>
+          </div>
+          <br />
+          <h1 class="temp" id="city">City</h1>
+          <h2 class="temp" id="maintemp"><span>--°C</span></h2>
+          <p id="description"></p>
+
+          <br />
+          <div class="row">
+            <div class="col-sm">
+              <div class="card daycard" style="width: 7rem">
+                <img src="img/sun-cloud2.png" class="card-img-top" alt="..." />
+                <div class="card-body smallcard">
+                  <h5 class="card-title tempsmall">13°C</h5>
+                  <p class="card-text day">mon</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card daycard" style="width: 7rem">
+                <img src="img/rain2.png" class="card-img-top" alt="..." />
+                <div class="card-body smallcard">
+                  <h5 class="card-title tempsmall">11°C</h5>
+                  <p class="card-text day">tue</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card daycard" style="width: 7rem">
+                <img src="img/sun2.png" class="card-img-top" alt="..." />
+                <div class="card-body smallcard">
+                  <h5 class="card-title tempsmall">17°C</h5>
+                  <p class="card-text day">wed</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card daycard" style="width: 7rem">
+                <img src="img/sun-cloud2.png" class="card-img-top" alt="..." />
+                <div class="card-body smallcard">
+                  <h5 class="card-title tempsmall">16°C</h5>
+                  <p class="card-text day">thu</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card daycard" style="width: 7rem">
+                <img src="img/thunder2.png" class="card-img-top" alt="..." />
+                <div class="card-body smallcard">
+                  <h5 class="card-title tempsmall">15°C</h5>
+                  <p class="card-text day">fri</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
