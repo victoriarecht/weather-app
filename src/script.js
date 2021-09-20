@@ -23,6 +23,7 @@ let day = days[now.getDay()];
 time.innerHTML = `${day} ${hour}:${minutes}`;
 
 // Search Engine:
+
 function search(event) {
   event.preventDefault();
   let city = document.querySelector("#cityInput").value;
@@ -37,14 +38,21 @@ function search(event) {
     let mainTemp = document.querySelector("#maintemp");
     let cityLine = document.querySelector("#city");
     let description = document.querySelector("#description");
+    let icon = document.querySelector("#icon");
     mainTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
     cityLine.innerHTML = response.data.name;
     description.innerHTML = response.data.weather[0].description;
+    icon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   }
 }
 
 let searchForm = document.querySelector("#searchForm");
 searchForm.addEventListener("submit", search);
+
+showWeather("Paris");
 
 // GPS Current Location
 function getCurrentWeather(position) {
