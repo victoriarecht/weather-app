@@ -4,12 +4,7 @@
   padding: 15px 60px;
 }
 body {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(252, 234, 168) 0%,
-    rgb(247, 242, 231) 50%,
-    #8bc0d0 90%
-  );
+  background: #e98468;
 }
 
 .fa-map-marker-alt {
@@ -39,18 +34,18 @@ body {
 }
 
 #city {
-  color: #8bc0d0;
+  color: #414143;
   text-align: center;
   font-size: 34px;
   font-weight: bolder;
 }
 #maintemp {
-  color: #8bc0d0;
+  color: #ec6e4c;
   text-align: center;
   font-size: 34px;
 }
 .tempsmall {
-  color: rgb(90, 175, 204);
+  color: #ec6e4c;
   text-align: center;
   font-size: 14px;
 }
@@ -114,5 +109,5 @@ body {
   padding: 0;
 }
 #opensource {
-  color: grey;
+  color: white;
 }

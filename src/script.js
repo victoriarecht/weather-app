@@ -48,6 +48,7 @@ function search(event) {
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
     windspeed.innerHTML = `windspeed: ${response.data.wind.speed}m/h`;
+    celsiusTemperature = Math.round(response.data.main.temp);
   }
 }
 
@@ -80,3 +81,23 @@ let gpsButton = document.querySelector("#currentLocation");
 gpsButton.addEventListener("click", getGPS);
 
 // Celsius -> Fahrenheit
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#maintemp");
+  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#maintemp");
+  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitButton = document.querySelector("#fahrenheit");
+fahrenheitButton.addEventListener("click", showFahrenheit);
+
+let celsiusButton = document.querySelector("#celsius");
+celsiusButton.addEventListener("click", showCelsius);
