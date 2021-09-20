@@ -39,6 +39,7 @@ function search(event) {
     let cityLine = document.querySelector("#city");
     let description = document.querySelector("#description");
     let icon = document.querySelector("#icon");
+    let windspeed = document.querySelector("#windspeed");
     mainTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
     cityLine.innerHTML = response.data.name;
     description.innerHTML = response.data.weather[0].description;
@@ -46,6 +47,7 @@ function search(event) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+    windspeed.innerHTML = `windspeed: ${response.data.wind.speed}m/h`;
   }
 }
 
@@ -78,17 +80,3 @@ let gpsButton = document.querySelector("#currentLocation");
 gpsButton.addEventListener("click", getGPS);
 
 // Celsius -> Fahrenheit
-let celsius = document.querySelector("#celsius");
-let fahrenheit = document.querySelector("#fahrenheit");
-
-function ChangeToCelsius() {
-  let mainTemp = document.querySelector("#maintemp");
-  mainTemp.innerHTML = "19°C";
-}
-
-function ChangeToFahrenheit() {
-  let mainTempF = document.querySelector("#maintemp");
-  mainTempF.innerHTML = "66°F";
-}
-celsius.addEventListener("click", ChangeToCelsius);
-fahrenheit.addEventListener("click", ChangeToFahrenheit);

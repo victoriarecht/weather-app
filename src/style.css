@@ -106,9 +106,12 @@ body {
 .bold {
   font-weight: bold;
 }
-#description {
+#description,
+#windspeed {
   color: grey;
   text-align: center;
+  margin: 0 auto;
+  padding: 0;
 }
 #opensource {
   color: grey;
