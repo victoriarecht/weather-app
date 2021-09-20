@@ -52,8 +52,6 @@ function search(event) {
 let searchForm = document.querySelector("#searchForm");
 searchForm.addEventListener("submit", search);
 
-showWeather("Paris");
-
 // GPS Current Location
 function getCurrentWeather(position) {
   let latitude = position.coords.latitude;
