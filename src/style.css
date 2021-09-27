@@ -54,8 +54,7 @@ body {
   color: grey;
 }
 .daycard {
-  display: block;
-  margin: 0 auto;
+  margin: 0 42px;
 }
 
 .card-img-top {
@@ -110,4 +109,11 @@ body {
 }
 #opensource {
   color: white;
+}
+#forecast-min {
+  opacity: 0.6;
+}
+#open-source {
+  color: white;
+  text-decoration: underline;
 }

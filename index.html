@@ -34,7 +34,12 @@
               ><button class="degree" id="fahrenheit">°F</button>
             </div>
             <div class="col-6 icon">
-              <img src="img/sun-cloud2.png" alt="logo" width="100" id="icon" />
+              <img
+                src="http://openweathermap.org/img/wn/09n@2x.png"
+                alt="logo"
+                width="100"
+                id="icon"
+              />
             </div>
             <div class="col-2">
               <span id="time">Sunday 03:15</span>
@@ -64,57 +69,14 @@
           <p id="windspeed"></p>
 
           <br />
-          <div class="row">
-            <div class="col-sm">
-              <div class="card daycard" style="width: 7rem">
-                <img src="img/sun-cloud2.png" class="card-img-top" alt="..." />
-                <div class="card-body smallcard">
-                  <h5 class="card-title tempsmall">13°C</h5>
-                  <p class="card-text day">mon</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card daycard" style="width: 7rem">
-                <img src="img/rain2.png" class="card-img-top" alt="..." />
-                <div class="card-body smallcard">
-                  <h5 class="card-title tempsmall">11°C</h5>
-                  <p class="card-text day">tue</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card daycard" style="width: 7rem">
-                <img src="img/sun2.png" class="card-img-top" alt="..." />
-                <div class="card-body smallcard">
-                  <h5 class="card-title tempsmall">17°C</h5>
-                  <p class="card-text day">wed</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card daycard" style="width: 7rem">
-                <img src="img/sun-cloud2.png" class="card-img-top" alt="..." />
-                <div class="card-body smallcard">
-                  <h5 class="card-title tempsmall">16°C</h5>
-                  <p class="card-text day">thu</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm">
-              <div class="card daycard" style="width: 7rem">
-                <img src="img/thunder2.png" class="card-img-top" alt="..." />
-                <div class="card-body smallcard">
-                  <h5 class="card-title tempsmall">15°C</h5>
-                  <p class="card-text day">fri</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div id="forecast"></div>
         </div>
       </div>
       <p id="opensource">
-        <a href="https://github.com/victoriarecht/weather-app" target="blank"
+        <a
+          href="https://github.com/victoriarecht/weather-app"
+          id="open-source"
+          target="blank"
           >open-source code</a
         >
         by Victoria Recht

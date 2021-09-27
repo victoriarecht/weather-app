@@ -22,6 +22,60 @@ let days = [
 let day = days[now.getDay()];
 time.innerHTML = `${day} ${hour}:${minutes}`;
 
+//forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+              <div class="col-2">
+                <div class="card daycard" style="width: 7rem">
+                  <img
+                    src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png"
+                    class="card-img-top"
+                    alt="icon"
+                  />
+                  <div class="card-body smallcard">
+                    <h5 class="card-title tempsmall">
+                      <span id="forecast-max">${Math.round(
+                        forecastDay.temp.max
+                      )}°C |</span
+                      ><span id="forecast-min"> ${Math.round(
+                        forecastDay.temp.min
+                      )}°C</span>
+                    </h5>
+                    <p class="card-text day">${formatDay(forecastDay.dt)}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "e24e54d68284c2e1184f3ffa6ec106f2";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 // Search Engine:
 
 function search(event) {
@@ -49,6 +103,8 @@ function search(event) {
     );
     windspeed.innerHTML = `windspeed: ${response.data.wind.speed}m/h`;
     celsiusTemperature = Math.round(response.data.main.temp);
+
+    getForecast(response.data.coord);
   }
 }
 
